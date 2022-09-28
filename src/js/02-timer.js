@@ -92,10 +92,3 @@ function startTimer() {
     }
   }, 1000);
 }
-function updateTimerDisplay(ms) {
-  data = convertMs(diff);
-  refs.displayDays.textContent = addLeadingZero(data.days);
-  refs.displayHours.textContent = addLeadingZero(data.hours);
-  refs.displayMinutes.textContent = addLeadingZero(data.minutes);
-  refs.displaySeconds.textContent = addLeadingZero(data.seconds);
-}
