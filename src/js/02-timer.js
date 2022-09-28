@@ -11,8 +11,6 @@ const refs = {
   displaySeconds: document.querySelector('[data-seconds]'),
 };
 let selectedDate = null;
-let data = {};
-let diff = 0;
 
 refs.startBtn.disabled = true;
 
@@ -49,6 +47,7 @@ function startTimer() {
     } else {
       updateTimerDisplay(diff);
       refs.startBtn.disabled = true;
+      refs.dateInput.disabled = true;
     }
   }, 1000);
 }
@@ -77,18 +76,4 @@ function convertMs(ms) {
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
-}
-
-function startTimer() {
-  intervalId = setInterval(() => {
-    diff = selectedDate.getTime() - Date.now();
-
-    if (diff <= 0) {
-      clearInterval(intervalId);
-    } else {
-      updateTimerDisplay(diff);
-      refs.startBtn.disabled = true;
-      refs.dateInput.disabled = true;
-    }
-  }, 1000);
 }
