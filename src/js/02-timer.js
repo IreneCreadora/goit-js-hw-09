@@ -53,7 +53,7 @@ function startTimer() {
   }, 1000);
 }
 
-function updateTimerDisplay(ms) {
+function updateTimerDisplay(data) {
   data = convertMs(diff);
   refs.displayDays.textContent = addLeadingZero(data.days);
   refs.displayHours.textContent = addLeadingZero(data.hours);
