@@ -11,6 +11,7 @@ const refs = {
   displaySeconds: document.querySelector('[data-seconds]'),
 };
 let selectedDate = null;
+let diff = 0;
 
 refs.startBtn.disabled = true;
 
