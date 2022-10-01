@@ -40,6 +40,8 @@ flatpickr(refs.dateInput, options);
 refs.startBtn.addEventListener('click', startTimer);
 
 function startTimer() {
+  refs.startBtn.disabled = true;
+  refs.dateInput.disabled = true;
   intervalId = setInterval(() => {
     diff = selectedDate.getTime() - Date.now();
 
@@ -47,8 +49,6 @@ function startTimer() {
       clearInterval(intervalId);
     } else {
       updateTimerDisplay(diff);
-      refs.startBtn.disabled = true;
-      refs.dateInput.disabled = true;
     }
   }, 1000);
 }
