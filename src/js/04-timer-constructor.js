@@ -74,7 +74,9 @@ class Timer {
   }
 
   getRefs() {
-    this.#refs.data = document.querySelectorAll(`${this.selector} .timer_js`);
+    this.#refs.data = document.querySelectorAll(
+      `${this.selector} .timer_js .value`
+    );
   }
 
   convertMs(diff) {
